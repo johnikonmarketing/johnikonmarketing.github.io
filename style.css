@@ -152,6 +152,38 @@ a { color: var(--navy); }
   font-size: 0.92rem;
 }
 
+/* MEP tabs */
+.mep-tabs { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 4px; }
+.mep-tab {
+  padding: 12px 22px;
+  border-radius: 999px;
+  border: 2px solid var(--line);
+  background: var(--paper);
+  color: var(--navy);
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+.mep-tab:hover { border-color: var(--amber); }
+.mep-tab.active { background: var(--navy); color: #fff; border-color: var(--navy); }
+.mep-panels { position: relative; margin-top: 24px; }
+.mep-panel {
+  display: none;
+  background: var(--paper-alt);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 24px 28px;
+  animation: mepFadeIn 0.25s ease;
+}
+.mep-panel.active { display: block; }
+.mep-panel ul { margin: 0; padding-left: 20px; }
+.mep-panel li { margin-bottom: 10px; font-size: 0.96rem; }
+@keyframes mepFadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
 /* Timeline */
 .timeline { display: flex; flex-direction: column; gap: 36px; }
 .timeline-item {
@@ -273,6 +305,21 @@ a { color: var(--navy); }
   gap: 10px;
 }
 .review-col-head h3 { margin: 0; }
+.filter-bar { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 28px; }
+.filter-btn {
+  padding: 9px 18px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: var(--paper);
+  color: var(--navy);
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+.filter-btn:hover { border-color: var(--amber); }
+.filter-btn.active { background: var(--navy); color: #fff; border-color: var(--navy); }
+
 blockquote {
   margin: 0 0 16px;
   padding: 14px 18px;
@@ -281,6 +328,17 @@ blockquote {
   border-left: 3px solid var(--amber);
   border-radius: 6px;
   font-size: 0.92rem;
+  max-height: 300px;
+  overflow: hidden;
+  transition: opacity 0.25s ease, max-height 0.3s ease, margin 0.3s ease, padding 0.3s ease, border-width 0.3s ease;
+}
+blockquote.quote-hidden {
+  opacity: 0;
+  max-height: 0;
+  margin: 0;
+  padding: 0 18px;
+  border-width: 0 0 0 3px;
+  pointer-events: none;
 }
 blockquote cite {
   display: block;
