@@ -73,6 +73,22 @@ a { color: var(--navy); }
   color: #fff;
   padding: 72px 0 56px;
 }
+.hero-flex {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 32px;
+}
+.hero-text { flex: 1; min-width: 0; }
+.hero-photo-wrap { flex-shrink: 0; }
+.hero-photo {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid rgba(255,255,255,0.25);
+  box-shadow: 0 4px 18px rgba(0,0,0,0.35);
+}
 .hero .eyebrow {
   text-transform: uppercase;
   letter-spacing: 0.08em;
@@ -327,6 +343,8 @@ blockquote cite {
 
 /* Responsive */
 @media (max-width: 760px) {
+  .hero-flex { flex-direction: column-reverse; align-items: center; text-align: center; gap: 20px; }
+  .hero-cta, .hero-stats { justify-content: center; }
   .hero h1 { font-size: 2rem; }
   .hero-stats { grid-template-columns: repeat(2, 1fr); }
   .chip-list { grid-template-columns: 1fr; }
