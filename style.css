@@ -386,6 +386,18 @@ blockquote cite {
 /* Footer */
 .site-footer { padding: 28px 0; border-top: 1px solid var(--line); }
 .site-footer p { color: var(--muted); font-size: 0.85rem; margin: 0; }
+.site-footer a { color: var(--muted); }
+.site-footer a:hover { color: var(--navy); }
+
+/* Links page */
+.links-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 10px; }
+.links-list li {
+  background: var(--paper-alt);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 14px 18px;
+}
+.links-list a { text-decoration: none; font-weight: 600; font-size: 0.95rem; }
 
 /* Blog */
 .hero-small { padding: 48px 0 40px; }
